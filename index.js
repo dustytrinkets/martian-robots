@@ -1,7 +1,7 @@
-const http = require('http');
-const open = require('open');
+const Open = require('open');
 const express = require('express');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
+const Start = require('./lib/start.js')
 
 const app = express();
 const port = 3000;
@@ -14,10 +14,12 @@ app.get('/', function(req, res){
 });
 
 app.post('/start', function(req, res){
- res.send(req.body)
+  let start = new Start(req.body.value)
+  let response = start.returnRes();
+  res.send(response)
 })
    
 app.listen(port, '127.0.0.1',function(){
     console.log('Launching the browser!');
-    open(`http://127.0.0.1:${port}`);
+    Open(`http://127.0.0.1:${port}`);
 });
