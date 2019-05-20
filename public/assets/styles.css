@@ -9,9 +9,12 @@ body{
     background-color:#b9723e;
     background-image: url('https://marsprogram.jpl.nasa.gov/system/resources/detail_files/6254_Curiosity_Location_Sol634-full2.jpg');
     background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     align-content: center;
+    min-height: 100vh;
+    background-attachment: fixed;
 }
 .header{
     font-family: 'Arvo', serif;
