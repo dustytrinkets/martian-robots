@@ -1,5 +1,5 @@
-var assert = require('Chai').assert;
-let Robot = require('../lib/class/robot');
+const assert = require('Chai').assert;
+const Robot = require('../lib/class/robot');
 
 describe('Testing Robots', function() {
     it('should assert obj is instance of Robot', function() {
@@ -8,7 +8,7 @@ describe('Testing Robots', function() {
             rows: 3,
             scents:[]
         }
-        var obj = new Robot(1, '3 2 N', 'FRRFLLFFRRFLL', grid);
+        let obj = new Robot(1, '3 2 N', 'FRRFLLFFRRFLL', grid);
         assert.instanceOf(obj, Robot);
     })
 
