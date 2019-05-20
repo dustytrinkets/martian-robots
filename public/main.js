@@ -30,6 +30,7 @@ function makeHttpRequest(inputObj){
 }
 
 function buildGrid(grid) {
+    gridDiv.innerHTML = "";
     for (let row = 0; row <= grid.rows; row++) {
       let rowDiv = document.createElement("div");
       rowDiv.className = "row";
@@ -48,6 +49,7 @@ function buildGrid(grid) {
 
   function insertRobotsInGrid(robots){
     for (let i = 0; i < robots.length; i++) {
+      debugger;
         let grid = document.getElementById(`${robots[i].position.x}_${robots[i].position.y}`)
         if (grid){
             grid.style.backgroundColor = "rgba(0,0,0,0.5)"
