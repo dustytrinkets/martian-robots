@@ -3,19 +3,6 @@ let input = document.getElementById('input');
 let output = document.getElementById('output');
 let gridDiv = document.getElementById("grid");
 
-
-// let inputSample = `5 3
-// 1 1 E
-// RFRFRFRF
-// 3 2 N
-// FRRFLLFFRRFLL
-// 0 3 W
-// LLFFFLFLFL`;
-// let inputSample=
-// {
-//     "value": "5 3\n1 1 E\nRFRFRFRF\n3 2 N \nFRRFLLFFRRFLL\n0 3 W\nLLFFFLFLFL"
-// }
-
 input.value = '5 3\n1 1 E\nRFRFRFRF\n3 2 N \nFRRFLLFFRRFLL\n0 3 W\nLLFFFLFLFL';
 
 
@@ -33,7 +20,6 @@ function makeHttpRequest(inputObj){
         if (this.readyState == 4 && this.status == 200) {
           let response = JSON.parse(xhttp.responseText);
           output.value = response.result;
-          console.log(response)
           buildGrid(response.grid);
           insertRobotsInGrid(response.robots);
         }
